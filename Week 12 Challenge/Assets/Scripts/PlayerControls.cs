@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerControls : MonoBehaviour
 {
     public CharacterController controller;
-    public Transform cam;
+    //public Transform cam;
 
     public float speed = 6f;
 
@@ -21,7 +21,7 @@ public class PlayerControls : MonoBehaviour
 
         if(direction.magnitude >= 0.1f)
         {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg; //+ cam.eulerAngles.y;
 
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmopthVelocity, turnSmoothTime);
 
